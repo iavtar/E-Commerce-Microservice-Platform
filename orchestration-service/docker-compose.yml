@@ -1,0 +1,8 @@
+version: '2'
+services:
+  ms:
+    image: 'iavtar/is-orchestration-service'
+    environment:
+      - "PORT:8005"
+    ports:
+      - "8005:8005"

@@ -1,0 +1,8 @@
+version: '2'
+services:
+  ms:
+    image: 'iavtar/is-service-discovery'
+    environment:
+      - "PORT:8010"
+    ports:
+      - "8010:8010"

@@ -1,0 +1,8 @@
+version: '2'
+services:
+  ms:
+    image: 'iavtar/is-cart-service'
+    environment:
+      - "PORT:8013"
+    ports:
+      - "8013:8013"

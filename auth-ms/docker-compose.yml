@@ -1,0 +1,8 @@
+version: '2'
+services:
+  ms:
+    image: 'iavtar/is-auth-service'
+    environment:
+      - "PORT:8012"
+    ports:
+      - "8012:8012"

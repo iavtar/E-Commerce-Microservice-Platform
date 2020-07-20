@@ -1,0 +1,8 @@
+version: '2'
+services:
+  ms:
+    image: 'iavtar/is-user-service'
+    environment:
+      - "PORT:8014"
+    ports:
+      - "8014:8014"
