@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on: [push]
 
 jobs:
-  build-and-deploy:
+  cart-service-build:
     runs-on: ubuntu-latest
     environment: dev
 
@@ -19,7 +19,7 @@ jobs:
 
     - name: Build with Maven
       run: |
-        cd auth-ms
+        cd is-cart-service
         mvn clean install package -DskipTests
 
     - name: Set up Docker Buildx
@@ -34,11 +34,11 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
-        context: auth-ms
+        context: is-cart-service
         push: true
         tags: |
-          appcd2023/is-auth-service:${{ github.run_number }}
-          appcd2023/is-auth-service:latest
+          appcd2023/is-cart-service:${{ github.run_number }}
+          appcd2023/is-cart-service:latest
 
     - name: Install Docker Compose
       run: |
@@ -46,10 +46,10 @@ jobs:
         sudo chmod +x /usr/local/bin/docker-compose
 
     - name: Pull Docker image
-      run: docker pull appcd2023/is-auth-service:${{ github.run_number }}
+      run: docker pull appcd2023/is-cart-service:${{ github.run_number }}
 
     - name: Deploy with Docker Compose
       run: |
-        cd auth-ms
+        cd is-cart-service
         docker-compose down
         docker-compose up -d
