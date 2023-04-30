@@ -34,7 +34,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
-        context: is-cart-service
+        context: cart-service
         push: true
         tags: |
           appcd2023/is-cart-service:${{ github.run_number }}
