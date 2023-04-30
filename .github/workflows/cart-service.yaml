@@ -50,6 +50,6 @@ jobs:
 
     - name: Deploy with Docker Compose
       run: |
-        cd is-cart-service
+        cd cart-service
         docker-compose down
         docker-compose up -d
