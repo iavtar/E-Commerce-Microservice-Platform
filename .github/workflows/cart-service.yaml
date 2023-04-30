@@ -1,9 +1,9 @@
-name: CI/CD Pipeline
+name: cart-service
 
 on: [push]
 
 jobs:
-  cart-service-build:
+  build:
     runs-on: ubuntu-latest
     environment: dev
 
@@ -19,7 +19,7 @@ jobs:
 
     - name: Build with Maven
       run: |
-        cd is-cart-service
+        cd cart-service
         mvn clean install package -DskipTests
 
     - name: Set up Docker Buildx

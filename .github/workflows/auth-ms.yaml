@@ -1,9 +1,9 @@
-name: CI/CD Pipeline
+name: auth-ms
 
 on: [push]
 
 jobs:
-  auth-ms-build:
+  build:
     runs-on: ubuntu-latest
     environment: dev
 
