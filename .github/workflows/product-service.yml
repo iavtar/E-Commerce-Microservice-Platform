@@ -47,9 +47,3 @@ jobs:
 
     - name: Pull Docker image
       run: docker pull appcd2023/is-product-service:${{ github.run_number }}
-
-    - name: Deploy with Docker Compose
-      run: |
-        cd product-service
-        docker-compose down
-        docker-compose up -d
